@@ -4,12 +4,12 @@
 
 In this homework, we will review the many of the concepts and tools covered in the Web Development unit. If needed, refer to the  reference sheets provided to you.
 
- ![HTTP Reference Sheet](Refernce-Files/HTTP_Reference.md)
- ![curl Reference Sheet](Reference-Files/cURL_Reference.md)
+* ![HTTP Reference Sheet](Refernce-Files/HTTP_Reference.md)
+* ![curl Reference Sheet](Reference-Files/cURL_Reference.md)
 
 ---
 
-### Questions 
+### Questions
 
 Before you work through the questions below, please create a new file and record your answers there. This will be your homework deliverable.
 
@@ -17,37 +17,69 @@ Before you work through the questions below, please create a new file and record
 
 Answer the following questions about the HTTP request and response process.
 
-1. What type of architecture does the HTTP request and response process occur in?
+1.     What type of architecture does the HTTP request and response process occur in?
 
-2. What are the different parts of an HTTP request? 
+-      Client-Server Architecture
 
-3. Which part of an HTTP request is optional?
+2.     What are the different parts of an HTTP request?
 
-4. What are the three parts of an HTTP response?
+-      Request Line, Request Headers, Request Body
 
-5. Which number class of status codes represents errors?
 
-6. What are the two most common request methods that a security professional will encounter?
+3.     Which part of an HTTP request is optional?
 
-7. Which type of HTTP request method is used for sending data?
+-      Request Body
 
-8. Which part of an HTTP request contains the data being sent to the server?
+4.     What are the three parts of an HTTP response?
 
-9. In which part of an HTTP response does the browser receive the web code to generate and style a web page?
+-      Headers, Status Line, Body
+
+5.     Which number class of status codes represents errors?
+
+-      400s range
+
+6.     What are the two most common request methods that a security professional will encounter?
+
+-      GET and POST requests
+
+7.     Which type of HTTP request method is used for sending data?
+
+-      POST Request
+
+8.     Which part of an HTTP request contains the data being sent to the server?
+
+-      Request body
+
+9.     In which part of an HTTP response does the browser receive the web code to generate and style a web page?
+
+-      Response body
 
 #### Using curl
 
 Answer the following questions about `curl`:
 
-10. What are the advantages of using `curl` over the browser?
+10.    What are the advantages of using `curl` over the browser?
+-      *  Ability to manage HTTP Requests / Responses in a Repeatable , Programmatic way
+-      *  Ability to quickly test HTTP HTTP Requests in away that can be automated
+-      *  Allows ability to make adjustments as the security professional works
+-      *  Ability to support numerous protocols even if a UI is not present
 
-11. Which `curl` option is used to change the request method?
 
-12. Which `curl` option is used to set request headers?
+11.    Which `curl` option is used to change the request method?
+
+-      -X
+
+12.    Which `curl` option is used to set request headers?
+
+-      -H
 
 13. Which `curl` option is used to view the response header?
 
+-      -I
+
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
+
+-     Options
 
 #### Sessions and Cookies
 
@@ -57,7 +89,7 @@ Answer the following questions about sessions and cookies:
 
 15. Which response header sends a cookie to the client?
 
-    ```HTTP
+    Set-Cookies
     HTTP/1.1 200 OK
     Content-type: text/html
     Set-Cookie: cart=Bob
@@ -90,13 +122,17 @@ User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/5
 username=Barbara&password=password
 ```
 
-17. What is the request method?
+17.    What is the request method?
+-      POST
 
-18. Which header expresses the client's preference for an encrypted response?
+18.    Which header expresses the client's preference for an encrypted response?
+-      Upgrade-Insecure-Requests: 1
 
-19. Does the request have a user session associated with it?
+19.    Does the request have a user session associated with it?
+-      No the Session is not restablished yet
 
-20. What kind of data is being sent from this request body?
+20.    What kind of data is being sent from this request body?
+-      Login credentials
 
 **HTTP Response**
 
@@ -117,41 +153,48 @@ X-XSS-Protection: 1; mode=block
 [page content]
 ```
 
-21. What is the response status code?
+21.    What is the response status code?
+-      200
 
-22. What web server is handling this HTTP response?
+22.    What web server is handling this HTTP response?
+-      Apache webserver
 
-23. Does this response have a user session associated to it?
+23.    Does this response have a user session associated to it?
+-      Yes SessionID=5
 
-24. What kind of content is likely to be in the [page content] response body?
-
+24.    What kind of content is likely to be in the [page content] response body?
+-
 25. If your class covered security headers, what security request headers have been included?
 
 #### Monoliths and Microservices
 
 Answer the following questions about monoliths and microservices:
 
-26. What are the individual components of microservices called?
+26.    What are the individual components of microservices called?
+-      Services
 
-27. What is a service that writes to a database and communicates to other services?
+27.    What is a service that writes to a database and communicates to other services?
+-      APIs
 
-28. What type of underlying technology allows for microservices to become scalable and have redundancy?
+28.    What type of underlying technology allows for microservices to become scalable and have redundancy?
+-      Load Balancer Technology
 
 #### Deploying and Testing a Container Set
 
 Answer the following questions about multi-container deployment:
 
-29. What tool can be used to deploy multiple containers at once?
+29.    What tool can be used to deploy multiple containers at once?
+-      Docker
 
-30. What kind of file format is required for us to deploy a container set?
-
+30.    What kind of file format is required for us to deploy a container set?
+-      .yml Yaml format
 #### Databases
 
-31. Which type of SQL query would we use to see all of the information within a table called `customers`?
+31.    Which type of SQL query would we use to see all of the information within a table called `customers`?
+-
+32.    Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
 
-32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
-
-33. Why would we never run `DELETE FROM <table-name>;` by itself?
+33.    Why would we never run `DELETE FROM <table-name>;` by itself?
 
 ---
 
@@ -177,11 +220,11 @@ It is important for cybersecurity professionals to know how to manage cookies wi
 
 Recall that you used `curl` to craft different kinds of requests for your `curl` activity, and that you saw how to use the Chrome extension Cookie-Editor to export and import cookies and swap sessions.
 
-There will be many systems in which you will need to test requests and cookies that will not connect to a browser or browser extension. 
+There will be many systems in which you will need to test requests and cookies that will not connect to a browser or browser extension.
 
 `curl` not only allows users to look through headers, send data, and authenticate to servers, but also to save and send cookies through two `curl` options: `--cookie-jar` and `--cookie`.
 
-These two options work exactly like Cookie-Editor, but on the command line. 
+These two options work exactly like Cookie-Editor, but on the command line.
 
 - `--cookie-jar` allows a curl user to save the cookies set within a response header into a text file.
 
@@ -195,22 +238,22 @@ If we want to use the `curl` command to log into an account, `Amanda`, with the 
 
 - `curl --cookie-jar ./amandacookies.txt --form "log=Amanda" --form "pwd=password" http://localhost:8080/wp-login.php --verbose`
 - `curl`: The tool that we are using.
-  
+
 - `--cookie-jar`: Specifies where we will save the cookies.
-  
+
 - `./amandacookies.txt`: Location and file where the cookies will be saved.
-  
+
 - `--form`: Lets us pick the login username and password forms that we set in our user info earlier. In this case it's our username.
-  
+
 - `log=Amanda`: How WordPress understands and accepts usernames.
-  
+
 - `--form`: Lets us pick the login username and password forms that we set in our user info earlier. In this case it's our password.
-  
+
 - `pwd=password`: How WordPress understands and accepts passwords.
-  
+
 - `http://localhost:8080/wp-login.php`: Our WordPress login page.
-  
-- `--verbose`: Outputs more specific description about the actions the command is taking.  
+
+- `--verbose`: Outputs more specific description about the actions the command is taking.
 
 Run the command:  `curl --cookie-jar ./amandacookies.txt --form "log=Amanda" --form "pwd=password" http://localhost:8080/wp-login.php --verbose`
 
@@ -224,11 +267,11 @@ To use a saved cookie, we use the following `curl` syntax:
 
 - `curl --cookie ./amandacookies.txt http://localhost:8080/wp-admin/users.php`
   - `curl`: The tool that we are using.
-    
+
   - `--cookie`: Precedes the location of our saved cookie that we want to use.
-    
+
   - `./amandacookies.txt`: Location and file where the cookies are saved.
-    
+
   - `http://localhost:8080/wp-admin/users.php`: A page that requires authentication to see properly. Note that we are not going to the login page, because supplying a cookie in this instance assumes that we are already logged in.
 
 Now that we know how to use the `curl` cookie jar, let's look at what we need to do for this challenge.
@@ -253,7 +296,7 @@ Using `curl`, you will do the following for the Ryan user:
 
 #### Step 1: Set Up
 
-Create two new users: Amanda and Ryan.   
+Create two new users: Amanda and Ryan.
 
 1. Navigate to `localhost:8080/wp-admin/`
 
@@ -331,4 +374,5 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
     - **Question:** What happens this time?
 
 ---
+
 
