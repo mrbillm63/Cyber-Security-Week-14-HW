@@ -191,10 +191,15 @@ Answer the following questions about multi-container deployment:
 #### Databases
 
 31.    Which type of SQL query would we use to see all of the information within a table called `customers`?
--
+-      SELECT column_name 
+-      FROM customers; 
+  
 32.    Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
+-      INSERT INTO table_name (column_1, column_2, column_3) 
+-      VALUES (value_1, 'value_2', value_3);
 
 33.    Why would we never run `DELETE FROM <table-name>;` by itself?
+       It will delete the entire table there is no select statement.  
 
 ---
 
