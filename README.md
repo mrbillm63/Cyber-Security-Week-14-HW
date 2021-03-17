@@ -198,7 +198,7 @@ Answer the following questions about multi-container deployment:
 -      VALUES (value_1, 'value_2', value_3);
 
 33.    Why would we never run `DELETE FROM <table-name>;` by itself?
-       It will delete the entire table there is no select statement.  
+-      It will delete the entire table there is no select statement.  
 
 ---
 
