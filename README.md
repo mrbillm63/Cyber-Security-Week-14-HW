@@ -100,6 +100,7 @@ Answer the following questions about sessions and cookies:
     GET /cart HTTP/1.1
     Host: www.example.org
     Cookie: cart=Bob
+    'Connection: keep-alive'
     ```
 
 #### Example HTTP Requests and Responses
@@ -165,7 +166,8 @@ X-XSS-Protection: 1; mode=block
        * Detail of the page configuration
        
 25.    If your class covered security headers, what security request headers have been included?
-       * Strict-Transport-Security:  max-age=31536000; includeSubDomains     
+       * Strict-Transport-Security:  max-age=31536000; includeSubDomains   
+         
 #### Monoliths and Microservices
 
 Answer the following questions about monoliths and microservices:
